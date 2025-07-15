@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiarioBienestar.PaginaEstadistica"
+             BackgroundColor="#ECEFF1"
+             Title="Estadísticas">
+    
+    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+        
+        <Border Style="{StaticResource BorderMod}" Padding="10" HorizontalOptions="StartAndExpand">
+            <VerticalStackLayout Spacing="20" Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label Text="Estadísticas de la última semana." TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+                <Frame BackgroundColor="#B0B0B0" CornerRadius="10" Padding="25">
+                    <VerticalStackLayout Padding="30">
+                        <Label x:Name="PromedioActividadFisicaSemanal" Text="Promedio de actividad física: 0" Style="{StaticResource lblEstadisticas}"/>
+                        <ProgressBar x:Name="ProgressEstadistica" Progress="0" Style="{StaticResource modProgressBar}"/>
+                        <Label x:Name="PromedioEnergia" Text="Promedio de energía semanal: 0" Style="{StaticResource lblEstadisticas}"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+    
+</ContentPage>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiarioBienestar.PaginaRegistro"
+             BackgroundColor="#ECEFF1"
+             Title="Registros">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Eliminar" Order="Primary" Priority="0" Clicked="DeleteBtn"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+            <!-- ListView con CollectionView -->
+        <CollectionView x:Name="miCollectionView"
+                        SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged">
+
+            <!-- ItemTemplate para la visualización de los elementos -->
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="10" BorderColor="Gray" CornerRadius="10">
+                        <StackLayout>
+
+                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                                <Label Text="Fecha: " Style="{StaticResource lblBinding}"/>
+                                <Label Text="{Binding Fecha}" Style="{StaticResource lblBinding}"/>
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                                <Label Text="Comentario: " Style="{StaticResource lblBinding}"/>
+                                <Label Text="{Binding Comentario}" Style="{StaticResource lblBinding}" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                                <Label Text="Intensidad: " Style="{StaticResource lblBinding}"/>
+                                <Label Text="{Binding Intensidad}" Style="{StaticResource lblBinding}" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                                <Label Text="Nivel Fisico: " Style="{StaticResource lblBinding}"/>
+                                <Label Text="{Binding NivelFisico}" Style="{StaticResource lblBinding}" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                                <Label Text="Nivel de Energía: " Style="{StaticResource lblBinding}"/>
+                                <Label Text="{Binding NivelEnergia}" Style="{StaticResource lblBinding}" />
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

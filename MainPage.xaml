@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiarioBienestar.MainPage"
+             BackgroundColor="#ECEFF1"
+             Title="Pagina de Bienvenida">
+
+    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+        <Border Style="{StaticResource BorderMod}" Padding="10" HorizontalOptions="StartAndExpand">
+            <VerticalStackLayout Spacing="20" Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout x:Name="BienvenidaStack" IsVisible="false" Spacing="20">
+                    <Label x:Name="BienvenidaLabel" Text="Bienvenido a esta aplicación." 
+                           Style="{StaticResource PresentacionLabel}" />
+                    <Label x:Name="FraseMotivacional" Text="" Style="{StaticResource ExplicacionLabel}"/>
+                    <Button x:Name="delete" Clicked="DeleteBtn" Text="Borrar Usuario" Style="{StaticResource btnMod}"/>
+                </StackLayout>
+
+                <StackLayout x:Name="EntradaStack" IsVisible="True" Spacing="20">
+                    <!-- Título Bienvenida -->
+                    <Label Text="Bienvenido al Diario de Bienestar." Style="{StaticResource PresentacionLabel}"/>
+
+                    <Label Style="{StaticResource ExplicacionLabel}"/>
+                    <!-- Explicación -->
+                    <Label Text="Introduzca su nombre:" Style="{StaticResource PresentacionLabel}"/>
+
+                    <!-- Campo de texto para nombre -->
+                    <Entry x:Name="EntryNombre" Style="{StaticResource EntryMod}" 
+                            HorizontalOptions="FillAndExpand" />
+
+                    <!-- Botón para crear usuario -->
+                    <Button Text="Crear Usuario" Clicked="BtnAddUser" x:Name="AddUser" 
+                            Style="{StaticResource btnMod}" HorizontalOptions="Center" />
+                </StackLayout>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>

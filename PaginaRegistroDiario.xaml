@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiarioBienestar.PaginaRegistroDiario"
+             BackgroundColor="#ECEFF1"
+             Title="Registro Diario">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Añadir" Order="Primary" Priority="0" Clicked="AddRegistroBtn"/>
+        <ToolbarItem Text="Limpiar" Order="Primary" Priority="0" Clicked="CleanRegistroBtn"/>
+    </ContentPage.ToolbarItems>
+    
+    <Grid>
+        <VerticalStackLayout Margin="15" Padding="20">
+            
+            <!--Comentario-->
+            <Label Text="¿Cómo te sientes?" HorizontalOptions="Center" Style="{StaticResource lblRegistro}"/>
+            <Editor x:Name="editorTexto" Style="{StaticResource modEditor}" />
+
+            <!--Intensidad fisica-->
+            <Label x:Name="etiquetaSlider" Text="Esfuerzo físico: 0" TextColor="Black"/>
+            <Slider x:Name="slider" Minimum="0" Maximum="10" ValueChanged="SliderChanged"/>
+            <Label x:Name="IntensidadEjercicio" Text="Nivel de intensidad física:" Margin="0,30,0,0" TextColor="Black"/>
+
+            <!--Nivel actividad fisica-->
+            <ProgressBar x:Name="progressBar" Progress="0" Style="{StaticResource modProgressBar}"/>
+
+            <HorizontalStackLayout Spacing="30" Padding="30">
+                <Label Text="Nivel de energía: " Style="{StaticResource lblRegistro}"/>
+                <Stepper x:Name="nivelEnergia" ValueChanged="StepperValue" 
+                         Style="{StaticResource stepperMod}"/> <!--Nivel de energia actual-->
+                <Label x:Name="lblnivelEnergia" Text="1" Style="{StaticResource lblRegistro}"/>
+                <Border Margin="30">
+                    <DatePicker x:Name = "fechaRegistro" Style="{StaticResource datePickerMod}"/>
+                </Border>
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

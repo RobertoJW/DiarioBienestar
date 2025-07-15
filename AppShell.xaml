@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DiarioBienestar.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DiarioBienestar"
+    xmlns:local2="clr-namespace:DiarioBienestar.Models"
+    Shell.FlyoutBehavior="Flyout"
+    Title="">
+
+    <FlyoutItem Title="Inicio">
+        <FlyoutItem.Icon>
+            <FontImageSource
+                FontFamily="MaterialIcon"
+                Glyph="{x:Static local2:Iconos.House}" 
+                Color="Black"
+                Size="16"/>
+        </FlyoutItem.Icon>
+        <ShellContent Route="MainPage">
+            <ShellContent.ContentTemplate>
+                <DataTemplate>
+                    <local:MainPage />
+                </DataTemplate>
+            </ShellContent.ContentTemplate>
+        </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Registro Diario">
+        <FlyoutItem.Icon>
+            <FontImageSource
+        FontFamily="MaterialIcon"
+        Glyph="{x:Static local2:Iconos.PenToSquare}" 
+        Color="Black"
+        Size="16"/>
+        </FlyoutItem.Icon>
+        <ShellContent Route="PaginaRegistroDiario">
+            <ShellContent.ContentTemplate>
+                <DataTemplate>
+                    <local:PaginaRegistroDiario />
+                </DataTemplate>
+            </ShellContent.ContentTemplate>
+        </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Estadísticas">
+        <FlyoutItem.Icon>
+            <FontImageSource
+                FontFamily="MaterialIcon"
+                Glyph="{x:Static local2:Iconos.ChartLine}" 
+                Color="Black"
+                Size="16"/>
+        </FlyoutItem.Icon>
+        <ShellContent Route="PaginaEstadistica">
+            <ShellContent.ContentTemplate>
+                <DataTemplate>
+                    <local:PaginaEstadistica />
+                </DataTemplate>
+            </ShellContent.ContentTemplate>
+        </ShellContent>
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Registro">
+        <FlyoutItem.Icon>
+            <FontImageSource
+            FontFamily="MaterialIcon"
+            Glyph="{x:Static local2:Iconos.ClipboardUser}" 
+            Color="Black"
+            Size="16"/>
+        </FlyoutItem.Icon>
+        <ShellContent Route="PaginaRegistro">
+            <ShellContent.ContentTemplate>
+                <DataTemplate>
+                    <local:PaginaRegistro />
+                </DataTemplate>
+            </ShellContent.ContentTemplate>
+        </ShellContent>
+    </FlyoutItem>
+</Shell>
